@@ -1,6 +1,6 @@
 ---------- Main Task ----------
 --> navbar //completed
---> blog page
+--> blog page //completed
 --> dynamic category buttons
 --> category button active status
 --> dynamic video cards
