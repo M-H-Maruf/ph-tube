@@ -1,85 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- favicon -->
-        <link
-            rel="shortcut icon"
-            href="images/favicon.png"
-            type="image/x-icon"
-        />
-        <title>PH Tube</title>
-        <!-- tailwind and daisyui cdn -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css"
-            rel="stylesheet"
-            type="text/css"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- external css -->
-        <link rel="stylesheet" href="styles/style.css" />
-        <!-- google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- custom tailwind classes -->
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            "tube-primary": "#FF1F3D",
-                            "tube-secondary": "#252525",
-                            "tube-background": "#25252520;",
-                            // "tube-dil": "#11111150",
-                        },
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <title>PH Tube</title>
+    <!-- tailwind and daisyui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- external css -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- custom tailwind classes -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "tube-primary": "#FF1F3D",
+                        "tube-secondary": "#252525",
+                        "tube-background": "#25252520;",
+                        // "tube-dil": "#11111150",
                     },
                 },
-            };
-        </script>
-    </head>
-    <body>
-        <!-- header start -->
-        <header class="px-2 lg:px-14 md:px-10 mx-auto">
-            <div class="navbar md:mt-6 ">
-                <div class="navbar-start">
-                    <img
-                        class="md:h-full h-6"
-                        src="images/Logo.png"
-                        alt="PH Tube logo"
-                    />
-                </div>
-                <div class="navbar-center lg:flex">
-                    <button
-                        class="btn md:text-lg font-medium bg-tube-background text-tube-secondary py-2 md:py-4 md:px-4 px-3 h-fit"
-                    >
-                        Sort by view
-                    </button>
-                </div>
-                <div class="navbar-end">
-                    <a class="btn md:text-lg font-medium bg-tube-primary text-white py-2 md:py-4 md:px-4 px-3 h-fit"
-                       href="blog.html" >Blog</a
-                    >
-                </div>
-            </div>
-            <div
-                class="divider mt-2 after:bg-tube-background before:bg-tube-background"
-            ></div>
-            <div id="category-container"></div>
-        </header>
-        <!-- header end -->
-        <!-- main start -->
-        <main></main>
-        <!-- main end -->
-        <!-- footer start -->
-        <footer></footer>
-        <!-- footer end -->
+            },
+        };
+    </script>
+</head>
 
-        <!-- script links -->
-        <script src="scripts/index.js"></script>
-    </body>
+<body>
+    <!-- header start -->
+    <header class="px-2 lg:px-14 md:px-10 mx-auto">
+        <!-- navbar -->
+        <div class="navbar md:mt-6">
+            <div class="navbar-start">
+                <img class="md:h-full h-6" src="images/Logo.png" alt="PH Tube logo" />
+            </div>
+            <div class="navbar-center lg:flex">
+                <button
+                    class="btn rounded md:text-lg font-medium bg-tube-background text-tube-secondary py-2 md:py-4 md:px-4 px-3 h-fit">
+                    Sort by view
+                </button>
+            </div>
+            <div class="navbar-end">
+                <a class="btn rounded md:text-lg font-medium bg-tube-primary text-white py-2 md:py-4 md:px-4 px-3 h-fit"
+                    href="blog.html">Blog</a>
+            </div>
+        </div>
+        <!-- divider -->
+        <div class="divider mt-2 after:bg-tube-background before:bg-tube-background"></div>
+        <!-- categories -->
+        <div class="flex items-center justify-center">
+            <div id="category-container" class="flex space-x-4 flex-wrap justify-center">
+                <!-- category buttons will be dynamically added here -->
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main></main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer></footer>
+    <!-- footer end -->
+
+    <!-- script links -->
+    <script src="scripts/index.js"></script>
+</body>
+
 </html>
