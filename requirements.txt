@@ -3,16 +3,16 @@
 --> blog page //completed
 --> dynamic category buttons //completed
 --> category button active status
---> dynamic video cards
+--> dynamic video cards //completed
 --> blue tick
 --> time ago
---> thumbnail
---> author photo
+--> thumbnail //completed
+--> author photo //completed
 --> dynamic category filter
 --> error handling for no data found
 
 ---------- Bonus Task ----------
 --> sort by views button
 --> time stamp in video thumbnail
---> responsive
+--> responsive //completed
 -->
