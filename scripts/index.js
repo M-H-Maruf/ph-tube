@@ -70,9 +70,14 @@ const displayVideos = (videos) => {
         const videoCard = document.createElement("div");
         videoCard.classList = `card w-80 mb-12 gap-5`;
 
+        // calculate time stamp
+
         videoCard.innerHTML = `
-        <figure class="w-80 h-48">
+        <figure class="w-80 h-48 relative">
         <img class="rounded-lg w-full h-full object-cover object-center" src=${video.thumbnail} alt="Shoes" />
+        
+        <h6 class="absolute bg-tube-card p-1 text-white text-xs rounded right-3 bottom-3 w-fit">3hrs 56 min ago</h6>
+
         </figure>
         <div class="card-body flex flex-row gap-4 p-0">
             <figure class="w-10 h-10 rounded-full">
@@ -91,8 +96,11 @@ const displayVideos = (videos) => {
         // verified functionality
         if (video.authors[0].verified == true) {
             videoCard.innerHTML = `
-            <figure class="w-80 h-48">
+            <figure class="w-80 h-48 relative">
             <img class="rounded-lg w-full h-full object-cover object-center" src=${video.thumbnail} alt="Shoes" />
+            
+            <h6 class="absolute bg-tube-card p-1 text-white text-xs rounded right-3 bottom-3 w-fit">3hrs 56 min ago</h6>
+
             </figure>
             <div class="card-body flex flex-row gap-4 p-0">
                 <figure class="w-10 h-10 rounded-full">
