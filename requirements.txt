@@ -1,5 +1,5 @@
 ---------- Main Task ----------
---> navbar
+--> navbar //completed
 --> blog page
 --> dynamic category buttons
 --> category button active status
