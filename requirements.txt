@@ -1,0 +1,18 @@
+---------- Main Task ----------
+--> navbar
+--> blog page
+--> dynamic category buttons
+--> category button active status
+--> dynamic video cards
+--> blue tick
+--> time ago
+--> thumbnail
+--> author photo
+--> dynamic category filter
+--> error handling for no data found
+
+---------- Bonus Task ----------
+--> sort by views
+--> time stamp in video thumbnail
+--> responsive
+-->
