@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- favicon -->
-    <!-- <link rel="shortcut icon" href="images/Summer 1.png" type="image/x-icon" /> -->
-    <title>Summer Sale</title>
-    <!-- tailwind and daisyui cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- external css -->
-    <link rel="stylesheet" href="styles/style.css" />
-    <!-- google fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="images/favicon.png"
+            type="image/x-icon"
+        />
+        <title>PH Tube</title>
+        <!-- tailwind and daisyui cdn -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- external css -->
+        <link rel="stylesheet" href="styles/style.css" />
+        <!-- google fonts -->
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" /> -->
-    <!-- custom tailwind classes -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // "sale-primary": "#E527B2",
-                        // "sale-secondary": "#111",
-                        // "sale-background": "#F9F6E2;",
-                        // "sale-dil": "#11111150",
+        <!-- custom tailwind classes -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "tube-primary": "#FF1F3D",
+                            "tube-secondary": "#252525",
+                            "tube-background": "#25252520;",
+                            // "tube-dil": "#11111150",
+                        },
                     },
                 },
-            },
-        };
-    </script>
-</head>
-<body>
-    <!-- header start -->
-    <header>
-        
-    </header>
-    <!-- header end -->
-    <!-- main start -->
-    <main>
-        
-    </main>
-    <!-- main end -->
-    <!-- footer start -->
-    <footer>
-        
-    </footer>
-    <!-- footer end -->
-    
-    <!-- script links -->
-    <script src="scripts/utilities.js"></script>
-    <script src="scripts/index.js"></script>
-</body>
+            };
+        </script>
+    </head>
+    <body>
+        <!-- header start -->
+        <header class="px-2 lg:px-14 md:px-10 mx-auto">
+            <div class="navbar md:mt-6">
+                <div class="navbar-start">
+                    <img class="h-full w-24 md:w-auto" src="images/Logo.png" alt="PH Tube logo">
+                </div>
+                <div class="navbar-center lg:flex">
+                    <button class="btn bg-tube-background text-tube-secondary btn-sm md:btn-md">Sort by view</button>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-tube-primary text-white btn-sm md:btn-md">Button</a>
+                </div>
+            </div>
+            <div class="divider mt-2 after:bg-tube-background before:bg-tube-background"></div> 
+            <div id="category-container">kj</div>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <main></main>
+        <!-- main end -->
+        <!-- footer start -->
+        <footer></footer>
+        <!-- footer end -->
+
+        <!-- script links -->
+        <script src="scripts/utilities.js"></script>
+        <script src="scripts/index.js"></script>
+    </body>
 </html>

@@ -12,7 +12,7 @@
 --> error handling for no data found
 
 ---------- Bonus Task ----------
---> sort by views
+--> sort by views button
 --> time stamp in video thumbnail
 --> responsive
 -->
