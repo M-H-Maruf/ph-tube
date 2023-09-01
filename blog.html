@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="images/favicon.png"
+            type="image/x-icon"
+        />
+        <title>PH Tube</title>
+        <!-- tailwind and daisyui cdn -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- external css -->
+        <link rel="stylesheet" href="styles/style.css" />
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- custom tailwind classes -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "tube-primary": "#FF1F3D",
+                            "tube-secondary": "#252525",
+                            "tube-background": "#25252520;",
+                            "tube-dil": "#FF1F3D15",
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="min-h-screen flex flex-col justify-between">
+        <div class="top">
+            <header class="px-2 lg:px-14 md:px-10 mx-auto">
+                <div class="navbar md:mt-6">
+                    <div class="navbar-start">
+                        <img
+                            class="md:h-full h-6"
+                            src="images/Logo.png"
+                            alt="PH Tube logo"
+                        />
+                    </div>
+
+                    <div class="navbar-end">
+                        <a
+                            class="btn md:text-lg font-medium bg-tube-primary text-white py-2 md:py-4 md:px-4 px-3 h-fit"
+                            href="index.html"
+                            >Home</a
+                        >
+                    </div>
+                </div>
+                <div
+                    class="divider mt-2 md:mb-10 after:bg-tube-background before:bg-tube-background"
+                ></div>
+            </header>
+            <main class="px-2 lg:px-14 md:px-10 mx-auto space-y-2">
+                <div class="collapse collapse-plus bg-tube-dil">
+                    <input
+                        type="radio"
+                        name="my-accordion-3"
+                        checked="checked"
+                    />
+                    <div class="collapse-title text-xl font-medium">
+                        What is the scope of var, let, and const?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-tube-secondary opacity-70">
+                            Var keyword declares a variable which is scoped to
+                            its current execution context, optionally
+                            initializing to a value. Let keyword declares a
+                            block scoped variable, optionally initializing it to
+                            a value. Const keyword declares constants which are
+                            block scoped much like variables defined using let
+                            but the value of a constant cannot change. The const
+                            declaration creates a read-only reference to a
+                            value.
+                        </p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-tube-dil">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">
+                        What is the use cases of null and undefined?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-tube-secondary opacity-70">
+                            'null' is used to represent an intentional absence
+                            of a value or to clear a variable, indicating
+                            emptiness. 'undefined' indicates that a variable has
+                            been declared but hasn't been assigned a value yet,
+                            or it's used as the default value for missing
+                            function arguments or nonexistent object properties.
+                        </p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-tube-dil">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">
+                        What is the meaning of REST API?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-tube-secondary opacity-70">
+                            A REST API (also known as RESTful API) is an
+                            application programming interface (API or web API)
+                            that conforms to the constraints of REST
+                            architectural style and allows for interaction with
+                            RESTful web services. REST stands for
+                            representational state transfer and was created by
+                            computer scientist Roy Fielding.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer
+            class="footer footer-center p-4 bg-tube-background text-base-content mt-11"
+        >
+            <div>
+                <p>Copyright © 2023 - All right reserved by PH Tube</p>
+            </div>
+        </footer>
+    </body>
+</html>
