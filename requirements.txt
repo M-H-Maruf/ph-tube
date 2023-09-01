@@ -1,7 +1,7 @@
 ---------- Main Task ----------
 --> navbar //completed
 --> blog page //completed
---> dynamic category buttons
+--> dynamic category buttons //completed
 --> category button active status
 --> dynamic video cards
 --> blue tick
