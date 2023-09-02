@@ -13,6 +13,7 @@ loadCategories();
 
 // display category buttons
 const displayCategories = (categories) => {
+    let id ='';
     const categoryContainer = document.getElementById("category-container");
 
     categories.forEach((category) => {
@@ -57,7 +58,7 @@ const displayCategories = (categories) => {
             });
 
             // Add classes to the clicked button
-            this.classList.add(
+            event.target.classList.add(
                 "active",
                 "bg-tube-primary",
                 "text-white",
@@ -68,8 +69,9 @@ const displayCategories = (categories) => {
             );
 
             // load new category
-            let id = event.target.id;
+            id = event.target.id;
             loadVideos(id);
+            id='';
         });
     });
 };
@@ -83,13 +85,14 @@ const loadVideos = async (id) => {
     );
     const data = await res.json();
     const videos = data.data;
+    id = '';
     // console.log(videos);
     // clear previous video cards
     const content = document.getElementById("video-container");
     content.innerHTML = ``;
 
     const sort = document.getElementById('sort');
-    sort.addEventListener('click',function() {
+    sort.addEventListener('click',() =>{
 
         // console.log(sortedVideos);
         if (videos.length!==0) {
@@ -101,7 +104,18 @@ const loadVideos = async (id) => {
         content.innerHTML = ``;
         displayVideos(sortedVideos);
         }
-        console.log(videos.length);
+        console.log(id, videos.length);
+        if (videos.length==0){
+            content.innerHTML = `
+            <section class="error-message-container w-screen h-full flex justify-center items-center mt-8">
+                <div class="error-message max-w-md text-center flex flex-col justify-center items-center gap-8">
+                    <img src="images/Icon.png" alt="loading error">
+                    <h1 class="text-tube-card text-4xl font-bold">Oops!! Sorry, There is no content here</h1>
+                </div>
+            </section>
+    
+            `;
+        }
     });
     if (videos.length!==0) {
     displayVideos(videos);}
