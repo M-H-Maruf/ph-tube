@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <title>PH Tube</title>
+    <!-- tailwind and daisyui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- external css -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- custom tailwind classes -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "tube-primary": "#FF1F3D",
+                        "tube-secondary": "#252525",
+                        "tube-background": "#25252520;",
+                        "tube-dil": "#FF1F3D15",
+                        "tube-card": "#171717",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <section class="error-message-container w-screen h-full flex justify-center items-center">
+        <div class="error-message max-w-md text-center flex flex-col justify-center items-center">
+            <img src="images/Icon.png" alt="loading error">
+            <h1 class="text-tube-card text-4xl font-bold">Oops!! Sorry, There is no content here</h1>
+        </div>
+    </section>
+
+</body>
+
+</html>

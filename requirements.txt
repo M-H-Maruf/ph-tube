@@ -4,15 +4,15 @@
 --> dynamic category buttons //completed
 --> category button active status
 --> dynamic video cards //completed
---> blue tick
---> time ago
+--> blue tick //completed
+--> time ago //completed
 --> thumbnail //completed
 --> author photo //completed
---> dynamic category filter
---> error handling for no data found
+--> dynamic category filter //completed
+--> error handling for no data found //completed
 
 ---------- Bonus Task ----------
 --> sort by views button
---> time stamp in video thumbnail
+--> time stamp in video thumbnail //completed
 --> responsive //completed
 -->

@@ -7,65 +7,124 @@ const loadCategories = async () => {
     const data = await res.json();
     categories = data.data;
     displayCategories(categories);
-    console.log(categories);
+    // console.log(categories);
 };
 loadCategories();
-
-//   document.addEventListener("DOMContentLoaded", function () {
-//     const buttons = document.querySelectorAll(".category-btn");
-
-//     buttons.forEach((button) => {
-//       button.addEventListener("click", function () {
-//         // Remove the classes from all buttons
-//         buttons.forEach((btn) => {
-//           btn.classList.remove("active","bg-tube-primary");
-//         });
-
-//         // Add classes to the clicked button
-//         this.classList.add("active","bg-tube-primary");
-//       });
-//     });
-//   });
 
 // display category buttons
 const displayCategories = (categories) => {
     const categoryContainer = document.getElementById("category-container");
 
     categories.forEach((category) => {
-        console.log(category);
+        // console.log(category);
 
         const categoryButton = document.createElement("button");
 
         categoryButton.classList = `category-btn btn rounded md:text-lg font-medium bg-tube-background text-tube-secondary text-opacity-70 h-fit mb-5`;
         if (category.category_id == "1000") {
-            categoryButton.classList.add("active");
+            categoryButton.classList.add(
+                "active",
+                "bg-tube-primary",
+                "text-white",
+                "text-opacity-100",
+                "hover:text-tube-primary",
+                "hover:border-2",
+                "hover:border-tube-primary"
+            );
         }
         categoryButton.textContent = category.category;
+        categoryButton.setAttribute("id", category.category_id);
 
         categoryContainer.appendChild(categoryButton);
+    });
+    // category button functionality
+
+    const buttons = document.querySelectorAll(".category-btn");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function (event) {
+            // Remove the classes from all buttons
+            buttons.forEach((btn) => {
+                btn.classList.remove(
+                    "active",
+                    "bg-tube-primary",
+                    "text-white",
+                    "text-opacity-100",
+                    "hover:text-tube-primary",
+                    "hover:border-2",
+                    "hover:border-tube-primary"
+                );
+            });
+
+            // Add classes to the clicked button
+            this.classList.add(
+                "active",
+                "bg-tube-primary",
+                "text-white",
+                "text-opacity-100",
+                "hover:text-tube-primary",
+                "hover:border-2",
+                "hover:border-tube-primary"
+            );
+
+            // load new category
+            let id = event.target.id;
+            loadVideos(id);
+        });
     });
 };
 
 // category section end
 
 // video card section start
-const loadVideos = async () => {
+const loadVideos = async (id) => {
     const res = await fetch(
-        "https://openapi.programming-hero.com/api/videos/category/1000"
+        `https://openapi.programming-hero.com/api/videos/category/${id}`
     );
     const data = await res.json();
     const videos = data.data;
-    console.log(videos);
-    displayVideos(videos);
+    // console.log(videos);
+    // clear previous video cards
+    const content = document.getElementById("video-container");
+    content.innerHTML = ``;
+
+    const sort = document.getElementById('sort');
+    sort.addEventListener('click',function() {
+
+        // console.log(sortedVideos);
+        if (videos.length!==0) {
+            let sortedVideos = videos.sort(
+                (a, b) => parseFloat(b.others.views) - parseFloat(a.others.views)
+            );
+            // clear previous video cards
+        const content = document.getElementById("video-container");
+        content.innerHTML = ``;
+        displayVideos(sortedVideos);
+        }
+        console.log(videos.length);
+    });
+    if (videos.length!==0) {
+    displayVideos(videos);}
+    else {
+        content.innerHTML = `
+        <section class="error-message-container w-screen h-full flex justify-center items-center mt-8">
+            <div class="error-message max-w-md text-center flex flex-col justify-center items-center gap-8">
+                <img src="images/Icon.png" alt="loading error">
+                <h1 class="text-tube-card text-4xl font-bold">Oops!! Sorry, There is no content here</h1>
+            </div>
+        </section>
+
+        `;
+    }
 };
 
 const displayVideos = (videos) => {
-    console.log(videos);
+    // console.log(videos);
 
     const videoContainer = document.getElementById("video-container");
 
     videos.forEach((video) => {
-        console.log(video);
+        // console.log(video);
 
         const videoCard = document.createElement("div");
         videoCard.classList = `card w-80 mb-12 gap-5`;
@@ -104,7 +163,7 @@ const displayVideos = (videos) => {
                 " ago</h6>";
         }
 
-        console.log(formattedTime);
+        // console.log(formattedTime);
 
         //   verification
         let verified = "";
@@ -139,6 +198,7 @@ const displayVideos = (videos) => {
         videoContainer.appendChild(videoCard);
     });
 };
+// sort by views button functionality
 
-loadVideos();
+loadVideos((id = 1000));
 // video card section end
