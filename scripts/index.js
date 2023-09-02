@@ -6,19 +6,21 @@ const loadCategories = async () => {
     );
     const data = await res.json();
     categories = data.data;
+    // calling the displayCategories function to display the category buttons with full interactivity
     displayCategories(categories);
-    // console.log(categories);
 };
+// calling the loadCategories to initiate the dynamic functions of the categories section
 loadCategories();
 
 // display category buttons
 const displayCategories = (categories) => {
+    // since id will be used later with different values dynamically it's better to leave it empty while definition
     let id ='';
     const categoryContainer = document.getElementById("category-container");
 
+    // using forEach to perform different actions on the elements of an array without any return
     categories.forEach((category) => {
-        // console.log(category);
-
+        // creating buttons for each category
         const categoryButton = document.createElement("button");
 
         categoryButton.classList = `category-btn btn rounded md:text-lg font-medium bg-tube-background text-tube-secondary text-opacity-70 h-fit mb-5`;
@@ -33,6 +35,7 @@ const displayCategories = (categories) => {
                 "hover:border-tube-primary"
             );
         }
+        // adding content and id to each button
         categoryButton.textContent = category.category;
         categoryButton.setAttribute("id", category.category_id);
 
@@ -78,7 +81,7 @@ const displayCategories = (categories) => {
 
 // category section end
 
-// video card section start
+// video cards section start
 const loadVideos = async (id) => {
     const res = await fetch(
         `https://openapi.programming-hero.com/api/videos/category/${id}`
@@ -86,11 +89,11 @@ const loadVideos = async (id) => {
     const data = await res.json();
     const videos = data.data;
     id = '';
-    // console.log(videos);
     // clear previous video cards
     const content = document.getElementById("video-container");
     content.innerHTML = ``;
 
+    // sort button functionality
     const sort = document.getElementById('sort');
     sort.addEventListener('click',() =>{
 
@@ -105,6 +108,7 @@ const loadVideos = async (id) => {
         displayVideos(sortedVideos);
         }
         console.log(id, videos.length);
+        // error message
         if (videos.length==0){
             content.innerHTML = `
             <section class="error-message-container w-screen h-full flex justify-center items-center mt-8">
@@ -117,6 +121,7 @@ const loadVideos = async (id) => {
             `;
         }
     });
+    // there is no need to run a huge function uselessly. so only run it when there's is a result to be obtained. it saves time.
     if (videos.length!==0) {
     displayVideos(videos);}
     else {
@@ -133,13 +138,14 @@ const loadVideos = async (id) => {
 };
 
 const displayVideos = (videos) => {
-    // console.log(videos);
+    
 
     const videoContainer = document.getElementById("video-container");
 
+    // creating individual video card dynamically
     videos.forEach((video) => {
-        // console.log(video);
-
+        
+        // creating video card
         const videoCard = document.createElement("div");
         videoCard.classList = `card w-80 mb-12 gap-5`;
 
@@ -154,7 +160,7 @@ const displayVideos = (videos) => {
         seconds %= 60;
         const years = Math.floor(days / 365);
 
-        // Construct the time string
+        // Construct the time string. there's no need to show hours and minutes if it is a video from years ago.
         let timeString = "";
         if (years > 0) {
             timeString = years + " years ";
@@ -170,6 +176,7 @@ const displayVideos = (videos) => {
             }
         }
         let formattedTime = "";
+        // the following prevents the creation of a time stamp box if the data about time isn't available
         if (seconds > 0 || years > 0) {
             formattedTime =
                 '<h6 class="absolute bg-tube-card p-1 text-white text-xs rounded right-3 bottom-3 w-fit">' +
@@ -177,7 +184,6 @@ const displayVideos = (videos) => {
                 " ago</h6>";
         }
 
-        // console.log(formattedTime);
 
         //   verification
         let verified = "";
@@ -185,7 +191,7 @@ const displayVideos = (videos) => {
             verified =
                 '<img class="w-5 h-5" src="images/tick.png" alt="verified">';
         }
-
+        // video card template
         videoCard.innerHTML = `
         <figure class="w-80 h-48 relative">
         <img class="rounded-lg w-full h-full object-cover object-center" src=${video.thumbnail} alt="Shoes"/>        
